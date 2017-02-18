@@ -28,5 +28,11 @@ def movie():
         return message
 
 
-# @app.route('movies')
-# def movies():
+@app.route('/movies')
+def movies():
+    connection = sqlite3.connect('database.db')
+    cursor = connection.cursor()
+    cursor.execute('SELECT * FROM movies')
+    data = cursor.fetchall()
+    connection.close()
+    return jsonify(data)
