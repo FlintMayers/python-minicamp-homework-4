@@ -16,6 +16,12 @@
         <input type="text" name="genre" >
         <input type="submit" value="Submit">
     </form>
+
+    <form action="{{ url_for('search') }}" method="GET">
+        <h3>Search</h3>
+        <input type="text" name="title" />
+        <input type="submit" >
+    </form>
     <a href="/movies">Movies List</a>
   </body>
 </html>

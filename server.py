@@ -36,3 +36,12 @@ def movies():
     data = cursor.fetchall()
     connection.close()
     return jsonify(data)
+
+@app.route('/search', methods=['GET'])
+def search():
+    connection = sqlite3.connect('database.db')
+    cursor = connection.cursor()
+    title = (request.args.get('title'), )
+    cursor.execute('SELECT * FROM movies WHERE title=?', title)
+    data = cursor.fetchall()
+    return jsonify(data)
