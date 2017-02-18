@@ -1,0 +1,10 @@
+body {
+  background-color: whitesmoke;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  width: 250px;
+}
